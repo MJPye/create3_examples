@@ -35,24 +35,8 @@ def generate_launch_description():
         namespace=namespace
     )
 
-    # Declares an action that will launch a node when executed by the launch description.
-    # This node is responsible for configuring the RPLidar sensor.
-    rplidar_node = Node(
-        package='rplidar_ros',
-        executable='rplidar_composition',
-        output='screen',
-        parameters=[
-            get_package_share_directory("create3_lidar_slam") + '/config/rplidar_node.yaml'
-            ],
-        namespace=namespace
-    )
-
     # Launches all named actions
     return LaunchDescription([
         namespace_argument,
         static_transform_node,
-        TimerAction(
-            period=2.0,
-            actions=[rplidar_node]
-        )
     ])

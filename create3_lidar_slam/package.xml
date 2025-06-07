@@ -16,7 +16,7 @@
   <build_depend>launch_ros</build_depend>
 
   <exec_depend>launch_ros</exec_depend>
-  <exec_depend>rplidar_ros</exec_depend>
+  <!--exec_depend>rplidar_ros</exec_depend-->
   <exec_depend>slam_toolbox</exec_depend>
 
   <export>
